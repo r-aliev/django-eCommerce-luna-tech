@@ -1,20 +1,20 @@
-# Luna Tech Co. eCommerce Website
+# eCommerce Website
   
   This is a fully functional eCommerce Website with guest checkout capability and payment integration. 
   
-  **Note**: Luna Tech Co. is not a real company. Inspired from different ecommerce projects to design and built it.
+  **Note**: This website is not for a real company. Inspired from different ecommerce projects to design and build it.
 
   ### Website Features:
   
-  - Unauthenticated users as authenticated users can perform a checkout. (used "Cookies" for storing unauthenticated users data)
-  - User can perform payments using their [Paypal](https://www.paypal.com/) account or debit/credit card.
+  - Unauthenticated users as authenticated users can perform a checkout. (used "Cookies" for storing unauthenticated users' data)
+  - Users can perform payments using their [Paypal](https://www.paypal.com/) accounts or debit/credit cards.
   - Users can add multiple products to cart, varying from physical to digital products.
   - Users can search for specific products by their names.
   - There is a pagination on the bottom of the store page. (Built by using Django Paginator Class)
     
   ### Demo
 
-   Quick website demo as guest(unauthenticated) user.
+   Quick website demo as guest (unauthenticated) user.
   
    ![Website demo](demo-gif/ecom.gif)
 
@@ -26,10 +26,10 @@
    - [Docker](https://www.docker.com/)
   
    Front-end:
-   - HTML, JS, CSS and Bootstrap
+   - HTML, CSS, Javascript and Bootstrap
    
-   Payment:
-    - [Paypal Developer](https://developer.paypal.com/) tools. (client side integration)
+   Payment: 
+   - [Paypal Developer](https://developer.paypal.com/) tools. (client side integration)
   
   
   ### Installation
