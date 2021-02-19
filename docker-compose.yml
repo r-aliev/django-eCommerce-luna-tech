@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+    web:
+        build: .
+        command: >
+            sh -c "python3 manage.py migrate &&
+                python3 manage.py wait_for_db &&
+                python3 manage.py runserver 0.0.0.0:8000"
+        volumes:
+            - .:/ecom
+        ports:
+            - "8000:8000"
+        depends_on:
+            - ecom_db
+    ecom_db:
+        image: postgres
+        environment:
+            - POSTGRES_DB=postgres
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+        ports:
+            - "5432:5432"

@@ -1,0 +1,99 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+{% if products %}
+<div class="row mb-3">
+    {% for product in products %}
+    <div class="col-lg-4">
+        <div class="card" style="max-width: 25rem; height: 25rem;">
+            <a href="#"><img src="{{product.imageURL}}" class="card-img-top thumbnail" alt="{{product.name}}"></a>
+            <div class="card-body">
+                <h5 class="card-title"><strong>{{product.name}}</strong></h5>
+                <h5 class="card-title" id="price"><strong>{{product.price|floatformat:2}}$</strong></h5>
+            </div>
+            <div class="card-body">
+                <button data-product="{{product.id}}" data-action="add" class="btn btn-danger add-btn update-cart">Add to cart</button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="row">
+  <div class="card m-auto">
+    <div class="card-body mt-2 mb-2">
+      <h2 class="card-title">
+        No results
+      </h2>
+      <p class="card-text">There were no results matching your search <strong>"{{query}}"</strong></p>
+      <hr>
+      <div class="align-items-center d-flex justify-content-center">
+        <a  class="btn btn-outline-dark" href="{% url 'store' %}">&#x2190; Back to Store</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if products %}
+<!--Pagination-->
+<nav aria-label="navigation">
+    <ul class="pagination justify-content-center">
+    {% if products.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ products.previous_page_number }}">
+          <i class="fa fa-angle-left"></i>
+        </a>
+      </li>
+    {% else %}
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+            <i class="fa fa-angle-left"></i>
+          </a>
+        </li>
+    {% endif %}
+
+    {% for i in products.paginator.page_range %}
+
+        {% if products.number == i %}
+          <li class="page-item active" aria-current="page">
+            <span class="page-link">
+              {{ i }}
+              <span class="sr-only">(current)</span>
+            </span>
+          </li>
+        {% elif i > products.number|add:'-2' and i < products.number|add:'2' %}
+              <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+
+        {% if products.number == 1 and i == 3 %}
+          <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+
+        {% if products.number == products.paginator.num_pages and i == products.number|add:'-2' %}
+          <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+        
+    {% endfor %}
+
+
+    {% if products.has_next %}
+        <li class="page-item">
+        <a class="page-link" href="?page={{ products.next_page_number }}">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </li>
+    {% else %}
+        <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
+
+{% endif %}
+
+<!--end of Pagination-->
+{% endblock content %}

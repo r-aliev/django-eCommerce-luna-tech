@@ -1,0 +1,55 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'store' %}">
+    <img  id="logo" src="{% static 'images/logo.png' %}">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'store' %}">Store</a>
+        </li>  
+        <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+        </li>
+
+    </ul>
+    
+    <form class="mr-auto form-inline my-2 my-lg-0" method ="get">
+      <input class="form-control mr-sm-2" name="q" id="search-input" type="search" placeholder="Search.." aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+    <div class="ml-auto form-inline my-2 my-lg-0">
+        <a href="#">
+            Login
+            <i class="fas fa-user"></i>
+        </a>
+
+        <a href="{% url 'cart' %}">
+            Cart
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+        <p id="cart-total">{{cartItems}}</p>
+
+    </div>
+    </div>
+
+
+    </div>
+    </div>
+</nav>
+
+<script type="text/javascript">
+    document.getElementById("search-input").value == "{{query}}"
+</script>

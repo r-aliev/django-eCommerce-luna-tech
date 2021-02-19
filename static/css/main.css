@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 0;
+}
+
+.container{
+    margin-bottom: 6rem;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: hsl(0, 0%, 30%))
+}
+
+.col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12{
+    margin-top: 10px;
+}
+
+/*  -------- Navbar -------------
+--------------------------------- */
+
+.navbar{
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#logo{
+    width: 150px;
+    margin: 0 2rem;
+}
+
+.bg-dark{
+    background-color: #343a40 !important;
+}
+
+.nav-link, .form-inline > a{
+    color: rgba(255, 255, 255, 0.801) !important;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+    line-height: 88px !important;
+    margin-left: 16px;
+    text-decoration: none;
+}
+
+.nav-link:hover, 
+.form-inline a:hover{
+    color: rgb(255, 255, 255) !important;
+}
+
+#cart-total{
+    display: block;
+    text-align: center;
+    color: #fff;
+    background-color: #dc3545;
+    width: 15px;
+    height: 17px;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+#search-input{
+    width:50%;
+}
+
+
+
+/*------------ Store ---------------
+-----------------------------------*/
+
+.box-element{
+    box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.thumbnail{
+    width:200px;
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+   -moz-box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+   box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
+}
+
+.card-title{
+    margin: 1rem auto;
+    text-align: center;
+    font-weight: lighter;
+}
+
+#price{
+    color: #dc3545;
+}
+
+
+.page-item.active .page-link{
+    background-color: #dc3545 !important;
+}
+
+.page-item .page-link{
+    color: #dc3545;
+}
+
+/* ------------------------- */
+
+
+.btn{
+    border-radius: 0;
+}
+
+.btn-danger{
+    width: 100%;
+}
+
+.row-image{
+    width: 100px;
+}
+
+.form-field{
+    width: 250px;
+    display: inline-block;
+    padding: 5px;
+}
+
+.cart-row{
+    display: flex;
+    align-items: flex-stretch;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ececec;
+}
+
+.quantity{
+    display: inline-block;
+    font-weight: 700;
+    padding-right: 10px;
+}
+
+.hidden{
+    display: none!important;
+}
+
+
+
+
+/* ------- Footer  ---------
+-------------------------------------------------- */
+
+.footer {
+  position: absolute;
+  margin-bottom: 0 !important;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 300px;
+}
+
+
+footer{
+    background-color: #343a40;
+    color: #d5d5d5;
+    padding-top: 2rem;
+}
+
+hr.light{
+    border-top: 1px solid #d5d5d5;
+    width: 75%;
+    margin-top: .8rem;
+    margin-bottom: 1rem;
+}
+
+footer a{
+    color: #d5d5d5;
+}
+
+
+/*--- Bootstrap Padding Fix --*/
+[class*="col-"] {
+    padding: 1rem;
+}
+
+
+
+/* Cart buttons */ 
+
+.number-input input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+.number-input input[type=number]::-webkit-inner-spin-button,
+.number-input input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+.number-input {
+    margin-bottom: 3rem;
+}
+.number-input button {
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+}
+.number-input button:before,
+.number-input button:after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    height: 2px;
+    transform: translate(-50%, -50%);
+}
+.number-input button.plus:after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+.number-input input[type=number] {
+    text-align: center;
+}
+.number-input.number-input {
+    border: 1px solid #ced4da;
+    width: 10rem;
+    border-radius: .25rem;
+}
+.number-input.number-input button {
+    width: 2.6rem;
+    height: .7rem;
+}
+.number-input.number-input button.minus {
+    padding-left: 10px;
+}
+.number-input.number-input button:before,
+.number-input.number-input button:after {
+    width: .7rem;
+    background-color: #495057;
+}
+.number-input.number-input input[type=number] {
+    max-width: 4rem;
+    padding: .5rem;
+    border: 1px solid #ced4da;
+    border-width: 0 1px;
+    font-size: 1rem;
+    height: 2rem;
+    color: #495057;
+}
+@media not all and (min-resolution:.001dpcm)
+    { @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+      .number-input.def-number-input.safari_only button:before, 
+      .number-input.def-number-input.safari_only button:after {
+        margin-top: -.3rem;
+    }
+}}
